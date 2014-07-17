@@ -17,6 +17,8 @@ public class Core
 		final String sharpen2 = "sharp-";
 		final String threshold1 = "-threshold";
 		final String threshold2 = "threshold-";
+		final String color1 = "-color";
+		final String color2 = "color-";	
 		
 		//specified kernels, choose anything!
 		float[] blur_kernel = {
@@ -41,12 +43,17 @@ public class Core
 		String file = args[0];
 		String func = args[1];
 		String param = "0";
+		String color = "";
 		
 		//some techniques require a parameter
 		if (args.length > 2)
 		{
 			param = args[2];
 		}
+		if (args.length > 3)
+		{
+			color = args[3];
+		}	
 		
 		//verbosity to state processing information
 		System.out.println("Requested file: " + file);
@@ -71,7 +78,19 @@ public class Core
 		else if (func.equals(threshold1))
 		{
 			System.out.println("Thresholding image");
-			ThresholdFilter myFilter = new ThresholdFilter(file, sharpen2, param, low, high);
+			
+			ThresholdFilter myFilter = null;
+			
+			if (color.equals(color1))
+			{
+				System.out.println("-color switch requested");
+				myFilter = new ThresholdFilter(file, threshold2, param, low, high, color2);
+			}
+			else
+			{
+				myFilter = new ThresholdFilter(file, threshold2, param, low, high);
+			}
+			
 			myFilter.runFilter();
 		}	
 		

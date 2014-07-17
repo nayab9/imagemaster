@@ -6,6 +6,7 @@ import java.io.*;
 import java.awt.image.BufferedImageOp;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
+import java.awt.Color;
 
 /*
 	This base class will provide the common functional processing across
@@ -69,6 +70,11 @@ public class ImageProcessor
 	public BufferedImage getImage()
 	{
 		return img;
+	}
+	
+	public void manipulateImage(int x, int y, int color)
+	{
+		img.setRGB(x, y, color);
 	}
 	
 	public void setDst(String dst)
