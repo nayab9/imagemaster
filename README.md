@@ -49,6 +49,7 @@ After color threshold:
 -sharpen : this will use a -1/8th kernel with center element 2, to sharpen the image specified
 
 -threshold: this will use a low value of 0 and high value of 255, and adjust each pixel according to a specified threshold
+
 BONUS: the -color switch will allow the user to keep color instead of defaulting to black and white.
 
 ###Coming soon..
