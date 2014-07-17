@@ -13,6 +13,7 @@ A basic demonstration of various image processing techniques implemented in Java
 ###Example usage:
 
 > java Core grom.bmp -blur
+
 > java Core grom.bmp -sharpen
 
 This will blur the file "grom.bmp" and output it into the same directory as "blur-grom.bmp" and "sharp-grom.bmp".
@@ -32,9 +33,13 @@ After sharpen:
 ###Current available image processing techniques:
 
 -blur : this will use a symmetrical 1/9 kernel to blur the image specified.
+
 -sharpen : this will use a -1/8th kernel with center element 2, to sharpen the image specified
 
 ###Coming soon..
+
 -threshold
+
 -noise
+
 -sine
