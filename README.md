@@ -16,7 +16,7 @@ A basic demonstration of various image processing techniques implemented in Java
 
 > java Core grom.bmp -sharpen
 
-This will blur the file "grom.bmp" and output it into the same directory as "blur-grom.bmp" and "sharp-grom.bmp".
+This will blur/sharpen the file "grom.bmp" and output it into the same directory as "blur-grom.bmp" and "sharp-grom.bmp".
 
 Before:
 
