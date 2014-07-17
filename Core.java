@@ -15,6 +15,8 @@ public class Core
 		final String blur2 = "blur-";
 		final String sharpen1 = "-sharpen";
 		final String sharpen2 = "sharp-";
+		final String threshold1 = "-threshold";
+		final String threshold2 = "threshold-";
 		
 		//specified kernels, choose anything!
 		float[] blur_kernel = {
@@ -24,13 +26,16 @@ public class Core
 		};
 		
 		float[] sharp_kernel = {
-		-1/8, -1/8, -1/8,
-		-1/8,    2, -1/8,
-		-1/8, -1/8, -1/8
+		-1/8f, -1/8f, -1/8f,
+		-1/8f,    2f, -1/8f,
+		-1/8f, -1/8f, -1/8f
 		};
 		
 		int kernel_row = 3;
 		int kernel_col = 3;
+		
+		int low = 0;
+		int high = 255;
 	
 		//simple parameter parsing, no error checking
 		String file = args[0];
@@ -57,12 +62,19 @@ public class Core
 			LinearFilter myFilter = new LinearFilter(file, blur2, blur_kernel, kernel_row, kernel_col);
 			myFilter.runFilter();
 		}
-		if (func.equals(sharpen1))
+		else if (func.equals(sharpen1))
 		{
 			System.out.println("Sharpening image");
 			LinearFilter myFilter = new LinearFilter(file, sharpen2, sharp_kernel, kernel_row, kernel_col);
 			myFilter.runFilter();
 		}		
+		else if (func.equals(threshold1))
+		{
+			System.out.println("Thresholding image");
+			ThresholdFilter myFilter = new ThresholdFilter(file, sharpen2, param, low, high);
+			myFilter.runFilter();
+		}	
+		
 		/*
 		implement additional image processing techniques here
 		if (func.equals(" "))
