@@ -42,8 +42,9 @@ public class Blur
 	// as an example, to calculate the blur value for i7 above, we do the following:
 	// i1 by x1 + i2 by x2 + i3 by x3 + 
 	// i6 by x4 + i7 by x5 + i8 by x6 +
-	// i11 by x7 + i12 by x8 + i18 by x9
-	
+	// i11 by x7 + i12 by x8 + i13 by x9
+	//this accumulation of values will give us our entry in i7.
+	//if a kernel is not symmetrical, ensure the kernel is flipped horizontally and vertically
 	public void runBlur()
 	{
 		try
