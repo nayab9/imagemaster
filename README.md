@@ -1,6 +1,6 @@
 ##the imagemaster
 
-A basic demonstration of various image processing techniques.
+A basic demonstration of various image processing techniques implemented in Java for cross platform demonstration.
 
 ###Compile instructions:
 
