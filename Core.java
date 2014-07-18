@@ -19,6 +19,10 @@ public class Core
 		final String threshold2 = "threshold-";
 		final String color1 = "-color";
 		final String color2 = "color-";	
+		final String noise1 = "-removenoise";
+		final String noise2 = "removenoise-";
+		final String noise3 = "-makenoise";
+		final String noise4 = "noisy-";			
 		
 		//specified kernels, choose anything!
 		float[] blur_kernel = {
@@ -93,7 +97,18 @@ public class Core
 			
 			myFilter.runFilter();
 		}	
-		
+		else if (func.equals(noise1))
+		{
+			System.out.println("Removing noise from image");
+			NoiseFilter myFilter = new NoiseFilter(file, noise2);
+			myFilter.runFilter();
+		}		
+		else if (func.equals(noise3))
+		{
+			System.out.println("Adding noise to image");
+			NoiseMaker myFilter = new NoiseMaker(file, noise4);
+			myFilter.runFilter();
+		}			
 		/*
 		implement additional image processing techniques here
 		if (func.equals(" "))
