@@ -23,6 +23,8 @@ public class Core
 		final String noise2 = "removenoise-";
 		final String noise3 = "-makenoise";
 		final String noise4 = "noisy-";			
+		final String sine1 = "-sine";
+		final String sine2 = "sine-";
 		
 		//specified kernels, choose anything!
 		float[] blur_kernel = {
@@ -109,14 +111,19 @@ public class Core
 			NoiseMaker myFilter = new NoiseMaker(file, noise4);
 			myFilter.runFilter();
 		}			
-		/*
-		implement additional image processing techniques here
-		if (func.equals(" "))
+		else if (func.equals(noise3))
 		{
-
+			System.out.println("Adding noise to image");
+			NoiseMaker myFilter = new NoiseMaker(file, noise4);
+			myFilter.runFilter();
 		}
-		*/
-
+		else if (func.equals(sine1))
+		{
+			System.out.println("Applying calibration image to corrupted image");
+			CalibrationFilter myFilter = new CalibrationFilter(file, sine2, param);
+			myFilter.runFilter();
+		}
+		
 		System.out.println("Processing Complete");
     }
 

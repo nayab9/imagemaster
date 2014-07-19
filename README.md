@@ -24,9 +24,11 @@ A basic demonstration of various image processing techniques implemented in Java
 
 > java Core noisy-grom.bmp -removenoise
 
-This will peform the requested filter on the file "grom.bmp" and output it into the same directory.
+> java Core sine.bmp -sine calibration.bmp
 
-Before:
+This will peform the requested filter on the file requested and output the result into the same directory.
+
+Before (grom.bmp):
 
 ![loading](grom.bmp)
 
@@ -54,20 +56,39 @@ After removing noise:
 
 ![loading](../screenshots/removenoise-noisy-grom.bmp?raw=true)
 
+Corrupted sine wave image (sine.bmp) and calibration image (calibration.bmp):
+
+![loading](../screenshots/sine.bmp?raw=true)
+![loading](../screenshots/calibration.bmp?raw=true)
+
+After calibration filter (sine-sine.bmp):
+
+![loading](../screenshots/sine-sine.bmp?raw=true)
+
 ###Current available image processing techniques:
 
--blur : this will use a symmetrical 1/9 kernel to blur the image specified.
+**-blur**: this will use a symmetrical 1/9 kernel to blur the image specified.
 
--sharpen : this will use a -1/8th kernel with center element 2, to sharpen the image specified
+**-sharpen**: this will use a -1/8th kernel with center element 2, to sharpen the image specified
 
--threshold: this will use a low value of 0 and high value of 255, and adjust each pixel according to a specified threshold
+**-threshold**: this will use a low value of 0 and high value of 255, and adjust each pixel according to a specified threshold
 
-**BONUS:** the -color switch will allow the user to keep color instead of defaulting to black and white.
+_Bonus_: the -color switch will allow the user to keep color instead of defaulting to black and white.
 
--removenoise: this will attempt to remove salt and papper noise from an image
+**-removenoise**: this will attempt to remove salt and papper noise from an image
 
-**BONUS:** the -noisemaker switch will randomly add salt and pepper noise to an image
+_Bonus_: the -noisemaker switch will randomly add salt and pepper noise to an image
 
-###Coming soon..
+**-sine**: this switch will calibrate a corrupted image to return to its original form.
 
--sine
+###Coming soon:
+
+* algorithm improvements
+
+* input sanitation
+
+* code cleanup
+
+* code polish
+
+* test suite
